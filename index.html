@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CHAKRI CREATIVE WORKS | Rahulchakri Kasukurthi</title>
+  <meta name="description" content="Chakri Creative Works - Ultra-premium web design and digital influence agency founded by Rahulchakri Kasukurthi." />
+  <meta name="author" content="Rahulchakri Kasukurthi" />
+
+  <!-- Premium Typography & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <style>
+    /* ----------------------------------------------------
+       LUXURY COLOR PALETTE: MIDNIGHT OBSIDIAN, IMPERIAL GOLD & ELECTRIC CYAN
+    ---------------------------------------------------- */
+    :root {
+      --bg-base: #07090e;
+      --bg-surface: #0d111b;
+      --bg-card: rgba(16, 21, 34, 0.75);
+      --bg-card-hover: rgba(22, 29, 46, 0.9);
+      
+      /* Imperial Gold Gradient Tones */
+      --gold-primary: #e6bc65;
+      --gold-light: #fbe6a8;
+      --gold-dark: #b58832;
+      --gold-glow: rgba(230, 188, 101, 0.25);
+      
+      /* Vibrant Electric Azure Tones */
+      --cyan-accent: #00f2fe;
+      --cyan-light: #4facfe;
+      --cyan-glow: rgba(0, 242, 254, 0.22);
+
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+      
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-gold: rgba(230, 188, 101, 0.28);
+      --border-cyan: rgba(0, 242, 254, 0.3);
+      
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+      --font-display: 'Syne', sans-serif;
+      --transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-base);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Ambient Background Lights */
+    .glow-orb-top {
+      position: fixed;
+      top: -160px;
+      right: -120px;
+      width: 580px;
+      height: 580px;
+      background: radial-gradient(circle, var(--gold-glow) 0%, transparent 70%);
+      filter: blur(100px);
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .glow-orb-bottom {
+      position: fixed;
+      bottom: -150px;
+      left: -120px;
+      width: 620px;
+      height: 620px;
+      background: radial-gradient(circle, var(--cyan-glow) 0%, transparent 70%);
+      filter: blur(110px);
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    /* ----------------------------------------------------
+       NAVIGATION
+    ---------------------------------------------------- */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(7, 9, 14, 0.88);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .navbar {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 1.1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      text-decoration: none;
+      color: var(--text-main);
+    }
+
+    .brand-logo img {
+      width: 46px;
+      height: 46px;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 1px solid var(--border-gold);
+      box-shadow: 0 4px 18px var(--gold-glow);
+    }
+
+    .brand-logo-text {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1.15rem;
+      letter-spacing: 0.6px;
+      background: linear-gradient(135deg, #ffffff 20%, var(--gold-light) 65%, var(--cyan-accent) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.2rem;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover {
+      color: var(--gold-light);
+    }
+
+    .nav-action-btn {
+      background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
+      color: #07090e !important;
+      font-weight: 700 !important;
+      padding: 0.65rem 1.45rem;
+      border-radius: 30px;
+      box-shadow: 0 4px 20px rgba(230, 188, 101, 0.35);
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .nav-action-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(230, 188, 101, 0.55);
+    }
+
+    /* ----------------------------------------------------
+       HERO SECTION
+    ---------------------------------------------------- */
+    .container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 4.5rem 1.5rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      align-items: center;
+      gap: 4.5rem;
+      padding-top: 1.5rem;
+    }
+
+    .tag-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: rgba(230, 188, 101, 0.08);
+      border: 1px solid var(--border-gold);
+      padding: 0.45rem 1.25rem;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      color: var(--gold-light);
+      margin-bottom: 1.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      font-weight: 600;
+    }
+
+    .tag-badge i {
+      color: var(--gold-primary);
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: 3.6rem;
+      line-height: 1.15;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+    }
+
+    .text-gold {
+      background: linear-gradient(135deg, #ffffff 15%, var(--gold-primary) 70%, var(--gold-light) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .text-cyan {
+      background: linear-gradient(135deg, var(--cyan-light) 0%, var(--cyan-accent) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-desc {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      margin-bottom: 2.4rem;
+      max-width: 580px;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+      margin-bottom: 2.8rem;
+    }
+
+    .btn-gold {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
+      color: #07090e;
+      font-weight: 700;
+      text-decoration: none;
+      padding: 0.95rem 2.2rem;
+      border-radius: 40px;
+      font-size: 1rem;
+      transition: var(--transition);
+      box-shadow: 0 8px 25px rgba(230, 188, 101, 0.35);
+    }
+
+    .btn-gold:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(230, 188, 101, 0.55);
+    }
+
+    .btn-outline-cyan {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      background: rgba(0, 242, 254, 0.05);
+      border: 1px solid var(--border-cyan);
+      color: var(--cyan-accent);
+      font-weight: 600;
+      text-decoration: none;
+      padding: 0.95rem 2.2rem;
+      border-radius: 40px;
+      font-size: 1rem;
+      transition: var(--transition);
+    }
+
+    .btn-outline-cyan:hover {
+      background: rgba(0, 242, 254, 0.15);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(0, 242, 254, 0.25);
+    }
+
+    /* Founder Visual Presentation */
+    .hero-media-wrapper {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+
+    .founder-frame {
+      position: relative;
+      width: 100%;
+      max-width: 410px;
+      border-radius: 28px;
+      padding: 8px;
+      background: linear-gradient(150deg, rgba(230, 188, 101, 0.4), rgba(0, 242, 254, 0.25), transparent 75%);
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.8);
+    }
+
+    .founder-frame img {
+      width: 100%;
+      height: 520px;
+      object-fit: cover;
+      object-position: top center;
+      border-radius: 22px;
+      display: block;
+    }
+
+    .floating-chip {
+      position: absolute;
+      background: rgba(13, 17, 27, 0.92);
+      backdrop-filter: blur(14px);
+      border-radius: 14px;
+      padding: 0.9rem 1.3rem;
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.65);
+    }
+
+    .floating-chip.chip-top {
+      top: 25px;
+      left: -25px;
+      border: 1px solid var(--border-gold);
+    }
+
+    .floating-chip.chip-bottom {
+      bottom: 25px;
+      right: -25px;
+      border: 1px solid var(--border-cyan);
+    }
+
+    .chip-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+    }
+
+    .chip-gold {
+      background: rgba(230, 188, 101, 0.15);
+      color: var(--gold-light);
+    }
+
+    .chip-cyan {
+      background: rgba(0, 242, 254, 0.15);
+      color: var(--cyan-accent);
+    }
+
+    /* ----------------------------------------------------
+       METRICS BAR
+    ---------------------------------------------------- */
+    .metrics-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 20px;
+      padding: 2.2rem;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    }
+
+    .metric-box h3 {
+      font-family: var(--font-display);
+      font-size: 2.3rem;
+      color: var(--gold-light);
+      margin-bottom: 0.2rem;
+    }
+
+    .metric-box p {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 600;
+    }
+
+    /* ----------------------------------------------------
+       SERVICES SECTION
+    ---------------------------------------------------- */
+    .section-headline {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 3.8rem auto;
+    }
+
+    .section-headline h2 {
+      font-family: var(--font-display);
+      font-size: 2.6rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .services-layout {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+
+    .service-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 20px;
+      padding: 2.6rem 2.2rem;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .service-box:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--border-gold);
+      transform: translateY(-8px);
+      box-shadow: 0 16px 40px rgba(230, 188, 101, 0.15);
+    }
+
+    .service-box-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 14px;
+      background: rgba(230, 188, 101, 0.1);
+      color: var(--gold-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      margin-bottom: 1.6rem;
+      transition: var(--transition);
+    }
+
+    .service-box:hover .service-box-icon {
+      background: var(--gold-primary);
+      color: #07090e;
+      transform: scale(1.08);
+    }
+
+    .service-box h3 {
+      font-size: 1.35rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .service-box p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* ----------------------------------------------------
+       INSTAGRAM & INFLUENCE SHOWCASE
+    ---------------------------------------------------- */
+    .influence-banner {
+      background: linear-gradient(135deg, rgba(230, 188, 101, 0.08), rgba(0, 242, 254, 0.06));
+      border: 1px solid var(--border-cyan);
+      border-radius: 26px;
+      padding: 3.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .influence-content h3 {
+      font-family: var(--font-display);
+      font-size: 2.1rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .btn-insta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+      color: #ffffff;
+      text-decoration: none;
+      padding: 1rem 2.2rem;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1.05rem;
+      transition: var(--transition);
+      box-shadow: 0 8px 25px rgba(220, 39, 67, 0.4);
+    }
+
+    .btn-insta:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 32px rgba(220, 39, 67, 0.6);
+    }
+
+    /* ----------------------------------------------------
+       CONTACT & BOOKING SECTION
+    ---------------------------------------------------- */
+    .contact-card-container {
+      display: grid;
+      grid-template-columns: 1fr 1.25fr;
+      gap: 3.5rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border-gold);
+      border-radius: 26px;
+      padding: 3.5rem;
+    }
+
+    .contact-channels {
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+      margin-top: 2rem;
+    }
+
+    .contact-tile {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      text-decoration: none;
+      color: inherit;
+      transition: var(--transition);
+    }
+
+    .contact-tile:hover {
+      transform: translateX(6px);
+    }
+
+    .contact-tile-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: rgba(230, 188, 101, 0.12);
+      border: 1px solid var(--border-gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold-primary);
+      font-size: 1.35rem;
+    }
+
+    .contact-tile-text h4 {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-dim);
+    }
+
+    .contact-tile-text p {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    /* Form Fields */
+    .input-field {
+      margin-bottom: 1.4rem;
+    }
+
+    .input-field label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .input-control {
+      width: 100%;
+      background: rgba(7, 9, 14, 0.8);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 0.95rem 1.2rem;
+      color: #ffffff;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      outline: none;
+      transition: var(--transition);
+    }
+
+    .input-control:focus {
+      border-color: var(--gold-primary);
+      box-shadow: 0 0 16px rgba(230, 188, 101, 0.25);
+    }
+
+    textarea.input-control {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .btn-send {
+      width: 100%;
+      background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
+      color: #07090e;
+      border: none;
+      padding: 1.05rem;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 1.05rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.65rem;
+      transition: var(--transition);
+    }
+
+    .btn-send:hover {
+      box-shadow: 0 10px 28px rgba(230, 188, 101, 0.5);
+      transform: translateY(-2px);
+    }
+
+    /* ----------------------------------------------------
+       FOOTER
+    ---------------------------------------------------- */
+    footer {
+      border-top: 1px solid var(--border-subtle);
+      padding: 3rem 1.5rem;
+      text-align: center;
+      color: var(--text-dim);
+      font-size: 0.9rem;
+    }
+
+    .footer-wrap {
+      max-width: 1240px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .footer-icons {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .footer-icons a {
+      color: var(--text-muted);
+      font-size: 1.3rem;
+      transition: var(--transition);
+    }
+
+    .footer-icons a:hover {
+      color: var(--gold-primary);
+      transform: translateY(-3px);
+    }
+
+    /* ----------------------------------------------------
+       RESPONSIVE ADAPTATIONS
+    ---------------------------------------------------- */
+    @media (max-width: 992px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 3.5rem;
+      }
+      .hero-desc {
+        margin: 0 auto 2.2rem auto;
+      }
+      .hero-cta-group {
+        justify-content: center;
+      }
+      .metrics-bar {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .contact-card-container {
+        grid-template-columns: 1fr;
+        padding: 2.2rem;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero-title {
+        font-size: 2.5rem;
+      }
+      .metrics-bar {
+        grid-template-columns: 1fr;
+      }
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Ambient Glow Effects -->
+  <div class="glow-orb-top"></div>
+  <div class="glow-orb-bottom"></div>
+
+  <!-- Header / Navigation -->
+  <header>
+    <nav class="navbar">
+      <a href="#" class="brand-logo">
+        <img src="logo.png" alt="Chakri Creative Works Logo" onerror="this.src='https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=150&q=80'" />
+        <span class="brand-logo-text">CHAKRI CREATIVE WORKS</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#influence">Influence</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#contact" class="nav-action-btn"><i class="fa-solid fa-paper-plane"></i> Hire Me</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <main>
+    <section class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div class="tag-badge">
+            <i class="fa-solid fa-gem"></i> Premium Agency & Portfolio
+          </div>
+          <h1 class="hero-title">
+            Architecting <span class="text-gold">Digital Excellence</span> & Scaling <span class="text-cyan">Influence</span>.
+          </h1>
+          <p class="hero-desc">
+            I am <strong>Rahulchakri Kasukurthi</strong>, a high-impact freelance website designer and digital creator helping brands convert attention into sustainable authority with world-class digital experiences.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#contact" class="btn-gold">
+              <i class="fa-solid fa-bolt"></i> Start a Project
+            </a>
+            <a href="https://www.instagram.com/rahulchakri21?cplk=MTczNXFpOGRsdnlsag==" target="_blank" class="btn-outline-cyan">
+              <i class="fa-brands fa-instagram"></i> Follow @rahulchakri21
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-media-wrapper">
+          <div class="founder-frame">
+            <img src="rahulchakri.png" alt="Rahulchakri Kasukurthi" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80'" />
+
+            <!-- Floating Highlights -->
+            <div class="floating-chip chip-top">
+              <div class="chip-icon chip-gold">
+                <i class="fa-solid fa-laptop-code"></i>
+              </div>
+              <div>
+                <h4 style="font-size: 0.9rem; font-weight: 700;">Web Designer</h4>
+                <p style="font-size: 0.75rem; color: var(--text-muted);">Clean Modern Architecture</p>
+              </div>
+            </div>
+
+            <div class="floating-chip chip-bottom">
+              <div class="chip-icon chip-cyan">
+                <i class="fa-solid fa-circle-check"></i>
+              </div>
+              <div>
+                <h4 style="font-size: 0.9rem; font-weight: 700;">Content Creator</h4>
+                <p style="font-size: 0.75rem; color: var(--text-muted);">@rahulchakri21 Verified</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Metrics Strip -->
+    <section class="container" style="padding-top: 0;">
+      <div class="metrics-bar">
+        <div class="metric-box">
+          <h3>100%</h3>
+          <p>Hand-Crafted Code</p>
+        </div>
+        <div class="metric-box">
+          <h3>Ultra</h3>
+          <p>Responsive Layouts</p>
+        </div>
+        <div class="metric-box">
+          <h3>Fast</h3>
+          <p>SEO & Speed Primed</p>
+        </div>
+        <div class="metric-box">
+          <h3>Direct</h3>
+          <p>Founder-Led Strategy</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section id="services" class="container">
+      <div class="section-headline">
+        <div class="tag-badge"><i class="fa-solid fa-layer-group"></i> Expertise</div>
+        <h2>Bespoke Services for Serious Growth</h2>
+        <p style="color: var(--text-muted);">
+          Every component is engineered to convey confidence, build authority, and convert visitors into clients.
+        </p>
+      </div>
+
+      <div class="services-layout">
+        <div class="service-box">
+          <div class="service-box-icon"><i class="fa-solid fa-palette"></i></div>
+          <h3>Custom UI/UX & Web Design</h3>
+          <p>Modern, hyper-clean websites crafted specifically to make your business look like an industry leader.</p>
+        </div>
+
+        <div class="service-box">
+          <div class="service-box-icon"><i class="fa-solid fa-bullhorn"></i></div>
+          <h3>Brand Reach & Social Media</h3>
+          <p>Strategic digital branding, organic engagement, and influencer-led campaigns to capture authentic audiences.</p>
+        </div>
+
+        <div class="service-box">
+          <div class="service-box-icon"><i class="fa-solid fa-gauge-high"></i></div>
+          <h3>Performance & SEO</h3>
+          <p>Fast-loading pages, clean search optimization tags, and seamless performance across all mobile screens.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Instagram Influence Banner -->
+    <section id="influence" class="container">
+      <div class="influence-banner">
+        <div class="influence-content">
+          <div class="tag-badge" style="margin-bottom: 0.8rem;"><i class="fa-brands fa-instagram"></i> Social Media</div>
+          <h3>Connect with Rahulchakri on Instagram</h3>
+          <p style="color: var(--text-muted); font-size: 1.05rem;">
+            Follow <strong>@rahulchakri21</strong> for creative content, tech insights, and entrepreneurial journeys.
+          </p>
+        </div>
+        <a href="https://www.instagram.com/rahulchakri21?cplk=MTczNXFpOGRsdnlsag==" target="_blank" class="btn-insta">
+          <i class="fa-brands fa-instagram"></i> Visit @rahulchakri21
+        </a>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="container">
+      <div class="section-headline">
+        <div class="tag-badge"><i class="fa-solid fa-envelope-open-text"></i> Connect</div>
+        <h2>Start Your Digital Journey</h2>
+        <p style="color: var(--text-muted);">Ready to build your digital presence? Send a direct message.</p>
+      </div>
+
+      <div class="contact-card-container">
+        <div>
+          <h3 style="font-family: var(--font-display); font-size: 1.8rem; margin-bottom: 0.6rem;">Direct Contact</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem;">
+            Reach out directly for freelance web design projects, branding consultations, and creator collaborations.
+          </p>
+
+          <div class="contact-channels">
+            <a href="tel:+918106637026" class="contact-tile">
+              <div class="contact-tile-icon">
+                <i class="fa-solid fa-phone"></i>
+              </div>
+              <div class="contact-tile-text">
+                <h4>Direct Phone</h4>
+                <p>+91 8106637026</p>
+              </div>
+            </a>
+
+            <a href="mailto:rahulchakri.24@gmail.com" class="contact-tile">
+              <div class="contact-tile-icon">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <div class="contact-tile-text">
+                <h4>Email Address</h4>
+                <p>rahulchakri.24@gmail.com</p>
+              </div>
+            </a>
+
+            <a href="https://www.instagram.com/rahulchakri21?cplk=MTczNXFpOGRsdnlsag==" target="_blank" class="contact-tile">
+              <div class="contact-tile-icon">
+                <i class="fa-brands fa-instagram"></i>
+              </div>
+              <div class="contact-tile-text">
+                <h4>Instagram</h4>
+                <p>@rahulchakri21</p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Working Contact Form -->
+        <form onsubmit="handleContactSubmit(event)">
+          <div class="input-field">
+            <label for="clientName">Your Name</label>
+            <input type="text" id="clientName" class="input-control" placeholder="Enter your full name" required />
+          </div>
+
+          <div class="input-field">
+            <label for="clientEmail">Email Address</label>
+            <input type="email" id="clientEmail" class="input-control" placeholder="name@example.com" required />
+          </div>
+
+          <div class="input-field">
+            <label for="serviceType">Service Needed</label>
+            <select id="serviceType" class="input-control">
+              <option value="Website Design">Website Design & Development</option>
+              <option value="Social Media Influence">Influencer Campaign & Promotion</option>
+              <option value="Complete Brand Setup">Complete Brand Setup</option>
+            </select>
+          </div>
+
+          <div class="input-field">
+            <label for="projectDetails">Project Overview</label>
+            <textarea id="projectDetails" class="input-control" placeholder="Briefly describe what you'd like to achieve..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn-send">
+            <i class="fa-solid fa-paper-plane"></i> Send Direct Inquiry
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-wrap">
+      <div class="brand-logo" style="justify-content: center;">
+        <span class="brand-logo-text" style="font-size: 1.15rem;">CHAKRI CREATIVE WORKS</span>
+      </div>
+      <p>&copy; 2026 Chakri Creative Works. Handcrafted & Designed by <strong>Rahulchakri Kasukurthi</strong>. All Rights Reserved.</p>
+      <div class="footer-icons">
+        <a href="https://www.instagram.com/rahulchakri21?cplk=MTczNXFpOGRsdnlsag==" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="tel:+918106637026" title="Phone"><i class="fa-solid fa-phone"></i></a>
+        <a href="mailto:rahulchakri.24@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('clientName').value;
+      const service = document.getElementById('serviceType').value;
+      const details = document.getElementById('projectDetails').value;
+
+      const subject = encodeURIComponent(`Project Inquiry: ${service} by ${name}`);
+      const body = encodeURIComponent(`Hello Rahulchakri,\n\nName: ${name}\nRequired Service: ${service}\n\nProject Details:\n${details}\n\nLooking forward to hearing from you!`);
+
+      window.location.href = `mailto:rahulchakri.24@gmail.com?subject=${subject}&body=${body}`;
+    }
+  </script>
+</body>
+</html>
